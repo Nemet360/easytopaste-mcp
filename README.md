@@ -55,8 +55,10 @@ it cannot read.
 
 The request carries the ciphertext, its size, the expiry and the one-time
 flag, and nothing else: no plaintext, no key, no conversation, no model name,
-no telemetry. `test/server.test.js` asserts the request body field by field,
-including that the plaintext does not appear in it.
+no telemetry. `test/server.test.js` asserts the arguments handed to the API client
+field by field, including that the plaintext does not appear in them —
+one layer above the HTTP body, which `src/api.js` builds. The property
+holds on the wire; the test watches the layer above it.
 
 Being precise about the rest, because a request is never only its body: the
 service sees what any server sees — your machine's outgoing IP address, which

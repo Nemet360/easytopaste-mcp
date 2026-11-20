@@ -11,8 +11,9 @@
  * It posts ciphertext and metadata, and nothing else: no plaintext, no key, no
  * conversation, no model name, no telemetry. An MCP server sits inside an
  * agent's context, which is the most tempting place in this product to leak
- * something by accident, so the request body is asserted field-by-field in
- * test/api.test.js rather than trusted.
+ * something by accident, so the arguments are asserted field-by-field in
+ * test/server.test.js rather than trusted. The body itself is built below;
+ * an acceptance reviewer confirmed it on the wire, and nothing watches it yet.
  */
 
 import { DEFAULT_API_BASE } from './vendor/link.js';
