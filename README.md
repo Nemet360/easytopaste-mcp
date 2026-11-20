@@ -2,6 +2,12 @@
 
 Hand a credential to a human **without putting it in the chat log**.
 
+> **Not on npm yet.** `npx -y easytopaste-mcp` resolves the day the package is
+> published; publishing is the owner's call and is pending. Until then, install
+> from source — clone this repository and point the `command` at
+> `node /path/to/easytopaste-mcp/bin/easytopaste-mcp.js`. Everything below is
+> true of both.
+
 ```jsonc
 // Claude Desktop: claude_desktop_config.json
 {
