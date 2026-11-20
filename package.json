@@ -34,5 +34,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Nemet360/easytopaste-mcp"
-  }
+  },
+  "mcpName": "io.github.nemet360/easytopaste"
 }
