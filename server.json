@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.nemet360/easytopaste",
+  "description": "Hand a credential to a human as a one-time, client-encrypted link instead of pasting it into the chat.",
+  "repository": {
+    "url": "https://github.com/Nemet360/easytopaste-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "easytopaste-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "EASYTOPASTE_TOKEN",
+          "description": "Optional bearer access token. Anonymous callers share 10 creates per day per outgoing IP address.",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "EASYTOPASTE_CHANNEL",
+          "description": "Which directory installed this copy; reported in the User-Agent so the project can tell its channels apart.",
+          "isRequired": false,
+          "default": "mcp-registry"
+        }
+      ]
+    }
+  ]
+}

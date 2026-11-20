@@ -1,0 +1,39 @@
+# Smithery lists MCP servers and installs them for a user's client. This file
+# is what it reads: how to start the server, and which settings a user may set.
+#
+# `stdio` rather than a hosted deployment, on purpose. The encryption happens
+# in this process: the key is generated here, put into the link, and never
+# sent anywhere. A hosted build would move that generation onto somebody
+# else's machine, which is the one property the product sells.
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      easytopasteToken:
+        type: string
+        title: Bearer access token
+        description: >-
+          Optional. Anonymous callers share a daily allowance of 10 creates per
+          outgoing IP address. Access tokens last 15 minutes, so there is no
+          permanent one to paste here yet.
+      apiBase:
+        type: string
+        default: https://api.easytopaste.com
+        description: Override only for a self-hosted deployment.
+      appBase:
+        type: string
+        default: https://app.easytopaste.com
+        description: Origin used to build the links this returns.
+    additionalProperties: false
+  commandFunction: |
+    (config) => ({
+      command: 'node',
+      args: ['bin/easytopaste-mcp.js'],
+      env: {
+        EASYTOPASTE_TOKEN: config.easytopasteToken || '',
+        EASYTOPASTE_API_BASE: config.apiBase || 'https://api.easytopaste.com',
+        EASYTOPASTE_APP_BASE: config.appBase || 'https://app.easytopaste.com',
+        EASYTOPASTE_CHANNEL: 'smithery'
+      }
+    })
