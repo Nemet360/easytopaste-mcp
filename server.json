@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.nemet360/easytopaste",
-  "description": "Hand a credential to a human as a one-time, client-encrypted link instead of pasting it into the chat.",
+  "name": "io.github.Nemet360/easytopaste",
+  "description": "Hand a credential over as a one-time, client-encrypted link instead of pasting it in chat.",
   "repository": {
     "url": "https://github.com/Nemet360/easytopaste-mcp",
     "source": "github"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "easytopaste-mcp",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "transport": {
         "type": "stdio"
       },

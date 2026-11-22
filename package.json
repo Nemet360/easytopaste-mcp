@@ -1,7 +1,7 @@
 {
   "name": "easytopaste-mcp",
-  "version": "0.1.0",
-  "description": "MCP server for EasyToPaste \u2014 hand a credential to a human as a one-time, client-encrypted link instead of pasting it into the chat",
+  "version": "0.1.1",
+  "description": "MCP server for EasyToPaste — hand a credential to a human as a one-time, client-encrypted link instead of pasting it into the chat",
   "keywords": [
     "mcp",
     "modelcontextprotocol",
@@ -14,7 +14,7 @@
   "bugs": {
     "email": "support@easytopaste.com"
   },
-  "license": "SEE LICENSE IN LICENSE.md",
+  "license": "MIT",
   "type": "module",
   "bin": {
     "easytopaste-mcp": "bin/easytopaste-mcp.js"
@@ -35,5 +35,5 @@
     "type": "git",
     "url": "https://github.com/Nemet360/easytopaste-mcp"
   },
-  "mcpName": "io.github.nemet360/easytopaste"
+  "mcpName": "io.github.Nemet360/easytopaste"
 }
